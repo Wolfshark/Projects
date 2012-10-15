@@ -28,20 +28,21 @@ public class WindowDesign extends JFrame {
 		JButton findS, newS, deleteS, updateS; 
 		JComboBox diplomas;
 		JRadioButton registration;
+		JScrollPane resize;
+		String [] degrees = {"Non-Matriculated" , "Undergraduate",
+				"Graduate", "Postgraduate"};
 		
 		
 	public WindowDesign()
 	{
 		super("Student Records");
 		
-		
+		setLayout(new BorderLayout());
 		
 	    blankPanel = new JPanel();
 		blankPanel.setBackground(Color.WHITE);
 		add(blankPanel);
 		blankPanel.setPreferredSize(new Dimension(500,500));
-		
-		setLayout(new GridBagLayout());
 		
 		centerPanel = new JPanel(new GridBagLayout());
 		centerPanel.setBackground(Color.WHITE);
@@ -57,42 +58,46 @@ public class WindowDesign extends JFrame {
 		a.fill = GridBagConstraints.HORIZONTAL;
 		a.gridx = 0;
 		a.gridy = 0;
-		a.ipady = 15;
-		a.ipadx = 10;
+		a.ipady = 10;
 		a.gridwidth = 1;
-		centerPanel.add(fName, a );
+		centerPanel.add(fName, a);
 		
 		a = new GridBagConstraints();
+		a.fill = GridBagConstraints.HORIZONTAL;
 		a.gridx = 0;
 		a.gridy = 1;
-		a.ipady = 15;
+		a.ipady = 10;
 		a.ipadx = 10;
 		a.gridwidth = 1;
-		centerPanel.add(acc, a );
+		centerPanel.add(acc,a);
 		
 		a = new GridBagConstraints();
+		a.fill = GridBagConstraints.HORIZONTAL;
 		a.gridx = 0;
 		a.gridy = 2;
-		a.ipady = 15;
+		a.ipady = 10;
 		a.ipadx = 10;
 		a.gridwidth = 1;
-		centerPanel.add(add, a );
+		centerPanel.add(add,a);
 		
 		a = new GridBagConstraints();
+		a.fill = GridBagConstraints.HORIZONTAL;
 		a.gridx = 0;
 		a.gridy = 3;
-		a.ipady = 15;
+		a.ipady = 10;
 		a.ipadx = 10;
 		a.gridwidth = 1;
-		centerPanel.add(add2, a );
-		
+		centerPanel.add(add2,a);
+
 		a = new GridBagConstraints();
+		a.fill = GridBagConstraints.HORIZONTAL;
 		a.gridx = 0;
 		a.gridy = 4;
-		a.ipady = 15;
+		a.ipady = 10;
 		a.ipadx = 10;
 		a.gridwidth = 1;
-		centerPanel.add(city, a );
+		centerPanel.add(city,a);
+		
 		
 		//WEST TEXTFIELD
 		fNameText = new JTextField(25);
@@ -103,43 +108,52 @@ public class WindowDesign extends JFrame {
 		
 		a = new GridBagConstraints();
 		a.fill = GridBagConstraints.HORIZONTAL;
-		a.ipady = 11;
 		a.gridx = 1;
 		a.gridy = 0;
-		a.gridwidth = 1;
-		centerPanel.add(fNameText, a);
+		a.ipady = 10;
+		a.gridwidth = 2;
+		a.weightx = 0.5;
+		centerPanel.add(fNameText,a);
 		
 		a = new GridBagConstraints();
 		a.anchor = GridBagConstraints.WEST;
-		a.ipady = 11;
 		a.gridx = 1;
 		a.gridy = 1;
+		a.ipady = 10;
 		a.gridwidth = 1;
-		centerPanel.add(accText, a);
+		centerPanel.add(accText,a);
 		
 		a = new GridBagConstraints();
 		a.fill = GridBagConstraints.HORIZONTAL;
-		a.ipady = 11;
 		a.gridx = 1;
 		a.gridy = 2;
-		a.gridwidth = 1;
-		centerPanel.add(addText, a);
+		a.ipady = 10;
+		a.ipadx = 10;
+		a.gridwidth = 2;
+		a.weightx = 0.5;
+		centerPanel.add(addText,a);
 		
 		a = new GridBagConstraints();
 		a.fill = GridBagConstraints.HORIZONTAL;
-		a.ipady = 11;
 		a.gridx = 1;
 		a.gridy = 3;
-		a.gridwidth = 1;
-		centerPanel.add(add2Text, a);
+		a.ipady = 10;
+		a.ipadx = 10;
+		a.gridwidth = 2;
+		a.weightx = 0.5;
+		centerPanel.add(add2Text,a);
 		
 		a = new GridBagConstraints();
 		a.fill = GridBagConstraints.HORIZONTAL;
-		a.ipady = 11;
 		a.gridx = 1;
 		a.gridy = 4;
-		a.gridwidth = 1;
-		centerPanel.add(cityText, a);
+		a.ipady = 10;
+		a.ipadx = 10;
+		a.gridwidth = 2;
+		a.weightx = 0.5;
+		centerPanel.add(cityText,a);
+		
+		
 		
 		//CENTER LABELS
 		lName = new JLabel ("Last Name: ");
@@ -148,42 +162,42 @@ public class WindowDesign extends JFrame {
 		zip = new JLabel ("Zip Code: ");
 		
 		a = new GridBagConstraints();
-		a.fill = GridBagConstraints.HORIZONTAL;
-		a.insets = new Insets(0,30,0,0);
-		a.gridx = 2;
+		a.insets = new Insets(0, 30, 0, 0);
+		a.gridx = 3;
 		a.gridy = 0;
-		a.ipady = 15;
+		a.ipady = 10;
 		a.ipadx = 10;
 		a.gridwidth = 1;
-		centerPanel.add(lName, a );
+		centerPanel.add(lName, a);
 		
 		a = new GridBagConstraints();
-		a.fill = GridBagConstraints.HORIZONTAL;
-		a.insets = new Insets(0,30,0,0);
-		a.ipady = 15;
-		a.ipadx = 10;
-		a.gridx = 2;
+		a.insets = new Insets(0, 30, 0, 0);
+		a.gridx = 3;
 		a.gridy = 1;
+		a.ipady = 10;
+		a.ipadx = 10;
 		a.gridwidth = 1;
 		centerPanel.add(bal, a);
 		
 		a = new GridBagConstraints();
-		a.fill = GridBagConstraints.HORIZONTAL;
-		a.insets = new Insets(0,30,0,0);
-		a.ipady = 15;
-		a.ipadx = 10;
-		a.gridx = 2;
-		a.gridy = 4;
-		a.gridwidth = 1;
-		centerPanel.add(state,a);
-		
-		a = new GridBagConstraints();
-		a.ipady = 15;
-		a.ipadx = 0;
+		a.insets = new Insets(0, 30, 0, 0);
 		a.gridx = 3;
 		a.gridy = 4;
+		a.ipady = 10;
+		a.ipadx = 10;
 		a.gridwidth = 1;
-		centerPanel.add(zip,a);
+		centerPanel.add(state, a);
+		
+		a = new GridBagConstraints();
+		a.anchor = GridBagConstraints.WEST;
+		a.gridx = 5;
+		a.gridy = 4;
+		a.ipady = 10;
+		a.ipadx = 10;
+		a.gridwidth = 1;
+		centerPanel.add(zip, a);
+		
+		
 		
 		//CENTER TEXTFIELDS
 		lNameText = new JTextField(30);
@@ -193,48 +207,50 @@ public class WindowDesign extends JFrame {
 		
 		a = new GridBagConstraints();
 		a.fill = GridBagConstraints.HORIZONTAL;
-		a.gridx = 3;
+		a.gridx = 4;
 		a.gridy = 0;
-		a.ipady = 11;
-		a.gridwidth = 1;
-		centerPanel.add(lNameText, a);
+		a.ipady = 10;
+		a.gridwidth = 2;
+		a.weightx = 0.5;
+		centerPanel.add(lNameText,a);
 		
 		a = new GridBagConstraints();
 		a.anchor = GridBagConstraints.WEST;
-		a.gridx = 3;
+		a.gridx = 4;
 		a.gridy = 1;
-		a.ipady = 11;
+		a.ipady = 10;
 		a.gridwidth = 1;
 		balText.setEditable(false);
-		centerPanel.add(balText, a);
+		centerPanel.add(balText,a);
 		
 		a = new GridBagConstraints();
 		a.anchor = GridBagConstraints.WEST;
-		a.gridx = 3;
+		a.gridx = 4;
 		a.gridy = 4;
-		a.ipady = 11;
+		a.ipady = 10;
 		a.gridwidth = 1;
-		centerPanel.add(stateText, a);
+		centerPanel.add(stateText,a);
 		
 		a = new GridBagConstraints();
-		a.anchor = GridBagConstraints.EAST;
-		a.gridx = 3;
+		a.anchor = GridBagConstraints.CENTER;
+		a.gridx = 5;
 		a.gridy = 4;
-		a.ipady = 11;
+		a.ipady = 10;
 		a.gridwidth = 1;
-		centerPanel.add(zipText, a);
+		centerPanel.add(zipText,a);
 		
-		add(centerPanel, a);
 		
-		//EAST PANEL
+		//EAST FIELDS
 		eastPanel = new JPanel(new GridBagLayout());
-		eastPanel.setBackground(Color.WHITE);
+		eastPanel.setBackground(Color.BLACK);
 		
+		
+		diplomas = new JComboBox (degrees);
 		findS = new JButton("Find Student ");
 		newS = new JButton("New Student ");
 		updateS = new JButton("Update Student ");
 		deleteS = new JButton("Delete Student ");
-
+		
 		
 
 	}
