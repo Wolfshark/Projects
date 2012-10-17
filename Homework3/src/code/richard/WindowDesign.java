@@ -1,3 +1,9 @@
+/***********************
+ ******RICHARD LUU******
+ ***********************/
+
+package code.richard;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
@@ -17,26 +23,26 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 public class WindowDesign extends JFrame {
-
-		JPanel blankPanel;
+////////DATA VARIABLE
+		JPanel blankPanel; 
 		JPanel centerPanel, eastPanel;
 		JLabel fName, lName, acc, add, add2, city,
 			   bal, state, zip, regStatus;
 		JTextField fNameText, accText, addText, add2Text, cityText,
 			       lNameText, balText, stateText, zipText;
 		JButton findS, newS, deleteS, updateS; 
-		JComboBox diplomas;
+		JComboBox<String> diplomas;
 		JRadioButton stoppedButton, clearButton;
 		JScrollPane resize;
 		String [] degrees = {"Non-Matriculated" , "Undergraduate",
 				"Graduate", "Postgraduate"};
 		
-		
+////////CODE
 	public WindowDesign()
 	{
 		super("Student Records");
 		
-		BufferedImage image = null;
+		BufferedImage image = null; //Importing and setting window icon
 		try {
 			image = ImageIO.read(getClass().getResource("/cuny.gif"));
 		}
@@ -46,7 +52,7 @@ public class WindowDesign extends JFrame {
 		
 		setIconImage(image);
 		setLayout(new BorderLayout());
-		
+		///////CONFIGURING CENTER PANEL USING GRIDBAGLAYOUT
 		centerPanel = new JPanel(new GridBagLayout());
 		centerPanel.setBackground(Color.WHITE);
 		
@@ -130,7 +136,6 @@ public class WindowDesign extends JFrame {
 		a.gridx = 1;
 		a.gridy = 2;
 		a.ipady = 10;
-		a.ipadx = 10;
 		a.gridwidth = 2;
 		a.weightx = 0.5;
 		centerPanel.add(addText,a);
@@ -140,7 +145,6 @@ public class WindowDesign extends JFrame {
 		a.gridx = 1;
 		a.gridy = 3;
 		a.ipady = 10;
-		a.ipadx = 10;
 		a.gridwidth = 2;
 		a.weightx = 0.5;
 		centerPanel.add(add2Text,a);
@@ -166,7 +170,7 @@ public class WindowDesign extends JFrame {
 		a.gridx = 3;
 		a.gridy = 0;
 		a.ipady = 10;
-		a.ipadx = 20;
+		a.ipadx = 10;
 		a.gridwidth = 1;
 		centerPanel.add(lName, a);
 		
@@ -176,7 +180,7 @@ public class WindowDesign extends JFrame {
 		a.gridx = 3;
 		a.gridy = 1;
 		a.ipady = 10;
-		a.ipadx = 20;
+		a.ipadx = 10;
 		a.gridwidth = 1;
 		centerPanel.add(bal, a);
 		
@@ -186,7 +190,7 @@ public class WindowDesign extends JFrame {
 		a.gridx = 3;
 		a.gridy = 4;
 		a.ipady = 10;
-		a.ipadx = 20;
+		a.ipadx = 10;
 		a.gridwidth = 1;
 		centerPanel.add(state, a);
 		
@@ -195,22 +199,22 @@ public class WindowDesign extends JFrame {
 		a.gridx = 5;
 		a.gridy = 4;
 		a.ipady = 10;
-		a.ipadx = 20;
+		a.ipadx = 10;
 		a.gridwidth = 1;
 		centerPanel.add(zip, a);
 		
 		//CENTER TEXTFIELDS
-		lNameText = new JTextField(30);
-		balText = new JTextField(10);
+		lNameText = new JTextField(25);
+		balText = new JTextField(12);
 		stateText = new JTextField(3);
-		zipText = new JTextField(10);
+		zipText = new JTextField(12);
 		
 		a = new GridBagConstraints();
 		a.fill = GridBagConstraints.HORIZONTAL;
 		a.gridx = 4;
 		a.gridy = 0;
 		a.ipady = 10;
-		a.gridwidth = 2;
+		a.gridwidth = 3;
 		a.weightx = 0.5;
 		centerPanel.add(lNameText,a);
 		
@@ -232,18 +236,17 @@ public class WindowDesign extends JFrame {
 		centerPanel.add(stateText,a);
 		
 		a = new GridBagConstraints();
-		a.anchor = GridBagConstraints.CENTER;
-		a.insets = new Insets(0, 20, 0, 0);
-		a.gridx = 5;
+		a.anchor = GridBagConstraints.WEST;
+		a.gridx = 6;
 		a.gridy = 4;
 		a.ipady = 10;
 		centerPanel.add(zipText,a);
 		
-		//EAST FIELDS
+		//////CONFIGURING EAST PANEL USING GRIDBAGLAYOUT
 		eastPanel = new JPanel(new GridBagLayout());
 		eastPanel.setBackground(Color.WHITE);
 		
-		diplomas = new JComboBox (degrees);
+		diplomas = new JComboBox<String> (degrees);
 		findS = new JButton("Find Student ");
 		newS = new JButton("New Student ");
 		updateS = new JButton("Update Student ");
@@ -251,7 +254,7 @@ public class WindowDesign extends JFrame {
 		stoppedButton = new JRadioButton("Stopped ");
 		clearButton = new JRadioButton("Clear ");
 		regStatus = new JLabel("Registration Status");
-		
+		///CONFIGURING RADIO BUTTONS & ADDING TO BUTTONGROUP
 		stoppedButton.setSelected(true);
 		stoppedButton.setBackground(Color.WHITE);
 		clearButton.setBackground(Color.WHITE);
@@ -261,6 +264,7 @@ public class WindowDesign extends JFrame {
 		group.add(clearButton);
 		
 		a = new GridBagConstraints();
+		a.insets = new Insets(10, 0, 0 , 0);
 		a.gridx = 0;
 		a.gridy = 0;
 		eastPanel.add(diplomas, a);
@@ -314,6 +318,7 @@ public class WindowDesign extends JFrame {
 		a.gridy = 7;
 		eastPanel.add(updateS, a);
 		
+		//ADDING CENTER AND EAST PANEL TO BLANKPANEL
 	    blankPanel = new JPanel( new BorderLayout());
 		blankPanel.setBackground(Color.WHITE);
 		blankPanel.add(centerPanel);
@@ -324,7 +329,5 @@ public class WindowDesign extends JFrame {
 		
 		repaint();
 		validate();
-		
-		
 	}
 }

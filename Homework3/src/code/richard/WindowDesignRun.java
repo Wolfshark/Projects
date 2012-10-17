@@ -1,4 +1,6 @@
+package code.richard;
 import javax.swing.JFrame;
+
 
 public class WindowDesignRun {
 
