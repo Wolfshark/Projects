@@ -1,4 +1,6 @@
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class FileIO {
@@ -6,13 +8,13 @@ public class FileIO {
 	public static void main(String[] args)
 	{
 		File inFile = new File("resource/Text.txt");
-		File outFile = new File("resource/Out.txt");
+		File outFile = new File("resource/Out.txt");		
 		
 		try{
 		FileReader read = new FileReader(inFile);
 		FileWriter write = new FileWriter(outFile);
 		
-		Scanner in = new Scanner(read);
+		Scanner in = new Scanner(new BufferedReader(read));
 		
 		PrintWriter out = new PrintWriter(new BufferedWriter(write));
 		
